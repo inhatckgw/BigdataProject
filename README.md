@@ -78,3 +78,40 @@
 
 ![image](https://github.com/inhatckgw/BigdataProject/assets/143976026/781de6dd-18b4-4e49-9089-6be8cdce6b70)
 
+#### 시각화 - 서울 내의 치킨 프랜차이즈
+용산구청을 중심으로 치킨 프랜차이즈 점포의 반경 200m를 서클 시각화했습니다.(BHC – 빨강, 교촌치킨 – 노랑, BBQ – 초록, 굽네치킨 - 파랑)
+
+      chicken_franchise_map_cd = folium.Map(location=[37.5360, 126.9675], zoom_start=12)
+
+      for name, lat, lng in zip(chicken_dataset_BHC['상호명'], chicken_dataset_BHC['위도'], chicken_dataset_BHC['경도']):
+          folium.Circle([lat, lng],
+              radius=200,
+              color='red',
+              fill_color='red',
+              popup=name).add_to(chicken_franchise_map_cd)
+
+      for name, lat, lng in zip(chicken_dataset_KyoChon['상호명'], chicken_dataset_KyoChon['위도'], chicken_dataset_KyoChon['경도']):
+          folium.Circle([lat, lng],
+              radius=200,
+              color='yellow',
+              fill_color='yellow',
+              popup=name).add_to(chicken_franchise_map_cd)
+
+      for name, lat, lng in zip(chicken_dataset_BBQ['상호명'], chicken_dataset_BBQ['위도'], chicken_dataset_BBQ['경도']):
+          folium.Circle([lat, lng],
+              radius=200,
+              color='green',
+              fill_color='green',
+              popup=name).add_to(chicken_franchise_map_cd)
+
+      for name, lat, lng in zip(chicken_dataset_GoobNe['상호명'], chicken_dataset_GoobNe['위도'], chicken_dataset_GoobNe['경도']):
+          folium.Circle([lat, lng],
+              radius=200,
+              color='blue',
+              fill_color='blue',
+              popup=name).add_to(chicken_franchise_map_cd)
+
+      chicken_franchise_map_cd
+
+![image](https://github.com/inhatckgw/BigdataProject/assets/143976026/ee471672-8032-4a1d-a01b-132d70bd3a50)
+
