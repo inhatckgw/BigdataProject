@@ -35,8 +35,16 @@
 프로젝트에 필요한 데이터를 가져온다.
 
 - 소상공인시장진흥공단_상가(상권)정보_서울 데이터 중 프로젝트에 필요한 치킨 전문점 데이터를 가져오고 그중 필요한 컬럼들을 추출해 데이터셋을 구성한다.
-	
 - 시각화에 필요한 서울 내의 행정구역경계선 데이터를 가져온다.
+
+      df_all = pd.read_csv('/content/소상공인시장진흥공단_상가(상권)정보_서울_202309.csv', encoding='utf8')
+      df = df_all[(df_all['표준산업분류명'] == '치킨 전문점')]
+      chicken_dataset = df[['상호명', '시도명', '시군구명', '위도', '경도']]
+      s_geo='https://raw.githubusercontent.com/southkorea/seoul-maps/master/kostat/2013/json/seoul_municipalities_geo_simple.json'
+
+데이터셋 헤더
+
+
 
 
 
