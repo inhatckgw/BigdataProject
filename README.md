@@ -61,3 +61,20 @@
 
       chicken_dataset_GoobNe = chicken_dataset[chicken_dataset['상호명'].str.contains('굽네')]
 
+#### 시각화 - 서울 내의 치킨 전문점
+ 용산구청을 중심으로 치킨 전문점 점포의 반경 200m를 서클 시각화했습니다.
+
+      chicken_map_cd = folium.Map(location=[37.5360, 126.9675], zoom_start=12)
+
+      for name, lat, lng in zip(chicken_dataset['상호명'], chicken_dataset['위도'], chicken_dataset['경도']):
+          folium.Circle([lat, lng],
+              radius=200,
+              color='red',
+              fill=True,
+              fill_color='coral',
+              fill_opacity=0.7,
+              popup=name).add_to(chicken_map_cd)
+      chicken_map_cd
+
+![image](https://github.com/inhatckgw/BigdataProject/assets/143976026/781de6dd-18b4-4e49-9089-6be8cdce6b70)
+
