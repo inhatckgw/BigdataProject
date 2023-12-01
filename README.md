@@ -18,6 +18,8 @@
 ### 데이터 수집
 프로젝트에 사용한 데이터는 공공데이터 포털의 소상공인시장진흥공단_상가(상권)정보 중의 서울 데이터입니다.
 
+[공공데이터포털 소상공인시장진흥공단_상가(상권)정보](https://www.data.go.kr/dataset/15012005/fileData.do)
+
 ![informa](https://github.com/inhatckgw/BigdataProject/assets/143976026/e963327c-a834-4216-a6fd-7199de52f697)
 
 
